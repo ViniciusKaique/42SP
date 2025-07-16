@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 09:14:38 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/16 12:36:48 by vinpache         ###   ########.fr       */
+/*   Created: 2025/07/16 17:15:23 by vinpache          #+#    #+#             */
+/*   Updated: 2025/07/16 17:21:54 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	ft_memset(s, '\0', n);
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
 }
 
 // #include <stdio.h>
-
-// int	main(void)
+// int main(int argc, char const *argv[])
 // {
-// 	char buffer[10] = "123456789";
-// 	printf("Antes do bzero: %s\n", buffer);
-// 	ft_bzero(buffer + 3, 1);
-// 	printf("Depois do bzero: %s\n", buffer);
-// 	return (0);
+//     printf("%c\n",ft_toupper('a'));
+//     printf("%c",ft_toupper('B'));
+//     return (0);
 // }

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 09:14:38 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/16 12:36:48 by vinpache         ###   ########.fr       */
+/*   Created: 2025/07/16 11:59:47 by vinpache          #+#    #+#             */
+/*   Updated: 2025/07/16 12:28:24 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	ft_memset(s, '\0', n);
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	d = dest;
+	s = src;
+	if (!dest && !src)
+		return (NULL);
+	if (d > s)
+	{
+		while (n--)
+			d[n] = s[n];
+	}
+	else
+	{
+		while (n--)
+			*d++ = *s++;
+	}
+	return (dest);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char buffer[10] = "123456789";
-// 	printf("Antes do bzero: %s\n", buffer);
-// 	ft_bzero(buffer + 3, 1);
-// 	printf("Depois do bzero: %s\n", buffer);
-// 	return (0);
-// }
