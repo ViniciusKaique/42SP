@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:52:10 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/17 14:36:15 by vinpache         ###   ########.fr       */
+/*   Created: 2025/07/17 11:14:28 by vinpache          #+#    #+#             */
+/*   Updated: 2025/07/17 13:40:30 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return ((c >= '0' && c <= '9'));
+	int	i;
+
+	i = (int)ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (NULL);
 }
 
 // #include <stdio.h>
-// int	main(void)
+
+// int main(void)
 // {
-//     char teste = '9';
-// 	printf("%d\n", ft_isdigit(teste));
-// 	return (0);
+// 	char *p;
+
+// 	p = ft_strrchr("abcabc", 'b');
+// 	printf("%s\n", p);
+
+// 	p = ft_strrchr("abcabc", 'z');
+// 	printf("%p\n", p);
+
+// 	p = ft_strrchr("abcabc", '\0');
+// 	printf("%s\n", p);
 // }
