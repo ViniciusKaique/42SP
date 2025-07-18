@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:13:28 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/18 14:44:46 by vinpache         ###   ########.fr       */
+/*   Created: 2025/07/18 10:07:08 by vinpache          #+#    #+#             */
+/*   Updated: 2025/07/18 12:43:38 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	size_t	i;
+	size_t	j;
+
+	if (*little == '\0')
+		return ((char *)big);
+	i = 0;
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while ((i + j) < len && little[j] && big[i + j] == little[j])
+			j++;
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
+		i++;
+	}
+	return (NULL);
 }
 
 // #include <stdio.h>
+
+// char	*ft_strnstr(const char *big, const char *little, size_t len);
+
 // int	main(void)
 // {
-// 	printf("%d", ft_isalpha('W'));
+// 	printf("%s\n", ft_strnstr("hello world", "world", 8));
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 #    By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 15:04:44 by vinpache          #+#    #+#              #
-#    Updated: 2025/07/17 16:51:48 by vinpache         ###   ########.fr        #
+#    Updated: 2025/07/18 17:44:41 by vinpache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SRC	=	ft_isalnum.c	\
 		ft_strrchr.c	\
 		ft_strncmp.c	\
 		ft_memchr.c		\
-		ft_memcmp.c
+		ft_memcmp.c		\
+		ft_strnstr.c	\
+		ft_atoi.c		\
+		ft_strdup.c		\
+		ft_calloc.c
+
 
 		
 OBJS = $(SRC:.c=.o)

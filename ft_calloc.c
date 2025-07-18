@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:13:28 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/18 14:44:46 by vinpache         ###   ########.fr       */
+/*   Created: 2025/07/18 17:30:53 by vinpache          #+#    #+#             */
+/*   Updated: 2025/07/18 18:23:53 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
-}
+	void *p;
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d", ft_isalpha('W'));
-// 	return (0);
-// }
+	if (nmemb && size && nmemb != (nmemb * size / size))
+		return (NULL);
+	p = malloc(nmemb * size);
+	if (!p)
+		return (NULL);
+	ft_bzero(p, nmemb * size);
+	return (p);
+}
