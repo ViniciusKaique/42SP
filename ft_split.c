@@ -6,7 +6,7 @@
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:56:05 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/23 16:49:46 by vinpache         ###   ########.fr       */
+/*   Updated: 2025/07/24 09:01:01 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	word_count = count_words(s, c);
-	result = (char **)calloc(word_count + 1, sizeof(char *));
+	result = (char **)ft_calloc(word_count + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;

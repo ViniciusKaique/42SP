@@ -6,7 +6,7 @@
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 08:36:34 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/22 08:40:41 by vinpache         ###   ########.fr       */
+/*   Updated: 2025/07/24 09:13:24 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	len;
 
-	if (!dst || !src)
-		return (0);
 	len = ft_strlen(src);
 	if (size == 0)
 		return (len);

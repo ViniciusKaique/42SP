@@ -6,7 +6,7 @@
 /*   By: vinpache <vinpache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 10:21:19 by vinpache          #+#    #+#             */
-/*   Updated: 2025/07/22 12:41:32 by vinpache         ###   ########.fr       */
+/*   Updated: 2025/07/24 09:38:58 by vinpache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	little_len;
 
+	if (!big && len == 0)
+		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	little_len = ft_strlen(little);
